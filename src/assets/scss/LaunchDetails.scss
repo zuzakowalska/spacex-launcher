@@ -1,0 +1,50 @@
+@import './vars.scss';
+
+.header {
+    height: 75px;
+    background: #0f1112;
+    position: relative;
+    .back {
+        height: 100%;
+        color: #ccac5b;
+        display: flex;
+        letter-spacing: 9px;
+        text-transform: uppercase;
+        font-size: 14px;
+        width: percentage(2/12);
+        align-items: center;
+        justify-content: flex-end;
+        .arrow {
+            height: 100%;
+            margin-right: 2em;
+            display: flex;
+            align-items: center;
+        }
+        .arrow__bg {
+            background: url('../img/arrow_pointer.svg');
+            background-position: center center;
+            background-size: cover;
+            width: 10px;
+            height: 10px;
+        }
+        .arrow__line {
+            border-bottom: 3px solid #ccac5b;
+            width: 2em;
+            height: 2px;
+            margin-left: -2px;
+        }
+    }
+    .logo {
+        background: url('../img/space_x_logo_bw_centered.png');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 15%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+}
