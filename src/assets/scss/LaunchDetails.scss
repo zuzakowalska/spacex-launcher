@@ -2,18 +2,19 @@
 
 .header {
     height: 75px;
-    background: #0f1112;
+    background:$almost-black;
     position: relative;
     .back {
         height: 100%;
-        color: #ccac5b;
+        color: $desert;
         display: flex;
         letter-spacing: 9px;
         text-transform: uppercase;
         font-size: 14px;
-        width: percentage(2/12);
+        width: 15em;
         align-items: center;
         justify-content: flex-end;
+        margin-left: 2em;
         .arrow {
             height: 100%;
             margin-right: 2em;
@@ -21,14 +22,14 @@
             align-items: center;
         }
         .arrow__bg {
-            background: url('../img/arrow_pointer.svg');
+            background: url('../img/arrow_pointer.png');
             background-position: center center;
             background-size: cover;
             width: 10px;
             height: 10px;
         }
         .arrow__line {
-            border-bottom: 3px solid #ccac5b;
+            border-bottom: 3px solid $desert;
             width: 2em;
             height: 2px;
             margin-left: -2px;
@@ -40,7 +41,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         height: 100%;
-        width: 15%;
+        width: 15em;
         position: absolute;
         top: 0;
         left: 50%;
