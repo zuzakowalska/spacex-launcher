@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LaunchDate from './LaunchDate.js';
 import Details from './Details.js';
+import '../assets/scss/Launch.scss';
 
 class Launch extends Component {
     render() {

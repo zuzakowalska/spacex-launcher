@@ -1,0 +1,16 @@
+@import './vars.scss';
+.launch {
+    display: flex;
+    margin-top: 90px;
+
+    &__container--left,
+    &__container--right {
+        width: 50%;
+    }
+    &__container--left {
+        padding-left: 2em;
+    }
+    &__container--right {
+        padding-right: 4em;
+    }
+}

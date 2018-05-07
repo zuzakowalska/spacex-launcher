@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Rocket from './Rocket.js';
 import LaunchPad from './LaunchPad.js';
+import '../assets/scss/Details.scss';
 
 class Details extends Component {
     render() {

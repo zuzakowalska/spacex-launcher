@@ -7,18 +7,29 @@ class LaunchDetails extends Component {
         return(
 
 <div className="launch-details">
+<div className="header--bg"></div>
+<div className="launch-details__container">
 <div className="header">
         <div className="back">
-            <div className="arrow"><div className="arrow__bg"></div><div className="arrow__line"></div></div>
+            <div className="arrow">
+            <div className="arrow__bg"></div>
+            <div className="arrow__line"></div>
+            </div>
             <h3>go back</h3>
         </div>
         <div className="logo"></div>
     </div>
 <Launch/>
     <div className="footer">
-        <div className="links">
-        </div>
+        <h3>Mission Links</h3>
+        <ul>
+        <li>Reddit Campaign</li>
+        <li>Presskit</li>
+        <li>Mission Video</li>
+        </ul>
     </div>
+</div>
+<div className="footer--bg"></div>
 </div>
         )
       }

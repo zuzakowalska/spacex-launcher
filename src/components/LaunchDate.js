@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/scss/LaunchDate.scss';
 
 class LaunchDate extends Component {
     render() {
@@ -7,7 +8,7 @@ class LaunchDate extends Component {
                     <h3>07 july 2018</h3>
                     <h1>iridium next 5 launch</h1>
                     <p className="launch-counter">
-                        <span id="counter"></span>to start</p>
+                        <span id="counter">20 days </span>to start</p>
                 </div>
         )
     }
