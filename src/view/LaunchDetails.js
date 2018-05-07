@@ -20,7 +20,10 @@ class LaunchDetails extends Component {
         <div className="logo"></div>
     </div>
 <Launch/>
-    <div className="footer">
+    
+</div>
+<div className="footer--bg">
+<div className="footer">
         <h3>Mission Links</h3>
         <ul>
         <li>Reddit Campaign</li>
@@ -29,7 +32,6 @@ class LaunchDetails extends Component {
         </ul>
     </div>
 </div>
-<div className="footer--bg"></div>
 </div>
         )
       }

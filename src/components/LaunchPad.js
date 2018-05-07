@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/scss/LaunchPad.scss';
 
 class LaunchPad extends Component {
     render() {
@@ -7,13 +8,11 @@ class LaunchPad extends Component {
             <h2>Launch Pad</h2>
             <div className="launch-pad__container">
                         <div className="launch-pad__container--left">
-                            <p>name:
-                                <span id="launch-name">falcon1</span>
+                            <p>name: <span id="launch-name">falcon1</span>
                             </p>
                         </div>
                         <div className="launch-pad__container--right">
-                            <p>name:
-                                <span id="launch-location">falcon1</span>
+                            <p>name: <span id="launch-location">falcon1</span>
                             </p>
                         </div>
                         </div>
