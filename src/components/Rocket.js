@@ -8,31 +8,29 @@ class Rocket extends Component {
 <h2>rocket</h2>
 <div className="rocket__container">
 <div className="rocket__container--left">
-    <p>name: <span id="name">falcon1</span>
+    <p>name: <span id="name">{this.props.rocket.name}</span>
     </p>
-    <p>company: <span id="company">falcon1</span>
+    <p>company: <span id="company">{this.props.rocket.company}</span>
     </p>
-    <p>height: <span id="height">falcon1</span>
+    <p>height: <span id="height">{this.props.rocket.height.meters} m</span>
     </p>
-    <p>diameter: <span id="diameter">falcon1</span>
+    <p>diameter: <span id="diameter">{this.props.rocket.diameter.meters} m</span>
     </p>
-    <p>mass: <span id="mass">falcon1</span>
+    <p>mass: <span id="mass">{this.props.rocket.mass.kg} kg</span>
     </p>
 </div>
 <div className="rocket__container--right">
-    <p>first flight: <span id="first-flight">falcon1</span>
+    <p>first flight: <span id="first-flight">{this.props.rocket.first_flight}</span>
     </p>
-    <p>country: <span id="success-rate">falcon1</span>
+    <p>country: <span id="success-rate">{this.props.rocket.country}</span>
     </p>
-    <p>success rate: <span id="height">falcon1</span>
+    <p>success rate: <span id="height">{this.props.rocket.success_rate_pct} %</span>
     </p>
-    <p>cost per launch: <span id="cost">falcon1</span>
+    <p>cost per launch: <span id="cost">${this.props.rocket.cost_per_launch}</span>
     </p>
 </div>
 </div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut esse provident cupiditate. Reiciendis molestiae odio hic expedita
-explicabo adipisci facere, officia sapiente quas excepturi consequuntur dolor alias distinctio, itaque
-aliquid.</p>
+<p>{this.props.rocket.description}</p>
 </div>
         )
     }

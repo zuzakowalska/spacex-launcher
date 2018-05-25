@@ -8,11 +8,9 @@ class Details extends Component {
         return(
             <div className="details">
                     <h2>details</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem quidem enim hic. Adipisci eos, saepe
-                        ipsam in ratione odio provident, sed laudantium cupiditate explicabo quia asperiores doloremque dolore
-                        accusamus impedit.</p>
-                        <Rocket/>
-                        <LaunchPad/>
+                    <p>{this.props.rocket.description}</p>
+                        <Rocket rocket = {this.props.rocket}/>
+                        <LaunchPad launchSite={this.props.launchSite}/>
                     </div>
         )
     }

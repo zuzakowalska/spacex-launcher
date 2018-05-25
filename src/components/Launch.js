@@ -8,10 +8,10 @@ class Launch extends Component {
         return(
                 <div className="launch">
         <div className="launch__container--left">
-            <LaunchDate/>
+            <LaunchDate rocket = {this.props.rocket}/>
         </div>
         <div className="launch__container--right">
-            <Details/>
+            <Details rocket = {this.props.rocket} launchSite={this.props.launchSite}/>
         </div>
     </div>
         )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Launch from '../components/Launch.js'
+import Launch from '../components/Launch.js';
 import '../assets/scss/LaunchDetails.scss';
 
 class LaunchDetails extends Component {
@@ -19,8 +19,7 @@ class LaunchDetails extends Component {
         </div>
         <div className="logo"></div>
     </div>
-<Launch/>
-    
+<Launch rocket = {this.props.rocket} launchSite={this.props.launchSite}/>
 </div>
 <div className="footer--bg">
 <div className="footer">
