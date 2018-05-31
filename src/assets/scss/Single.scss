@@ -1,0 +1,71 @@
+@import "./vars.scss";
+.single {
+    color: #fff;
+    text-transform: uppercase;
+    width: 50%;
+    float: left;
+    clear: left;
+    list-style-type: none;
+    position: relative;
+    &:not(:first-child) {
+        margin-top: 4em;
+    }
+    &__wrapper {
+        float: left;
+        display: flex;
+        p:not(:first-child) {
+            border-left: 1px solid #fff;
+            margin-left: 15px;
+            padding-left: 15px;
+        }
+    }
+    .line {
+        width: 95%;
+        border-top: 2px solid $desert;
+        background: $desert;
+        float: left;
+        position: relative;
+        .arrow {
+            width: 12px;
+            height: 12px;
+            background: url("../img/arrow_pointer.svg") center center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: -7px;
+            right: -1px;
+            transform: rotateY(-180deg);
+        }
+    }
+    .bullet {
+        background: #fff;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        right: -4px;
+        top: 50%;
+    }
+    &:nth-of-type(2n) {
+        float: right;
+        clear: right;
+        text-align: right;
+        margin-top: 4em;
+        .single__wrapper {
+            float: right;
+        }
+        .line {
+            float: right;
+            .arrow {
+                right: unset;
+                left: -1px;
+                transform: none;
+            }
+        }
+        .bullet {
+            left: -6px;
+        }
+        &:nth-child(2) {
+            margin-top: 6em;
+        }
+    }
+}
