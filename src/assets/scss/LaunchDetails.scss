@@ -46,10 +46,6 @@
             
         }
         .logo {
-            background: url('../img/space_x_logo_bw_centered.png');
-            background-size: contain;
-            background-position: center center;
-            background-repeat: no-repeat;
             height: 100%;
             width: 15em;
             position: absolute;
@@ -81,18 +77,6 @@
         h3 {
             font-size: 24px;
             letter-spacing: 18px;
-        }
-        ul {
-            display: flex;
-            justify-content: space-between;
-            list-style-type: none;
-            padding: 0;
-            li {
-                border: 1px solid #fff;
-                padding: 5px 25px;
-                border-radius: 20px;
-                margin: 0 1.5em;
-            }
         }
     }
 }
