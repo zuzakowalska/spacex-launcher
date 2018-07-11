@@ -3,7 +3,7 @@ import "../assets/scss/LaunchesList.scss";
 
 class FilterButtons extends Component {
   render() {
-    return <li>All Rockets</li>;
+    return <li>{this.props.name}</li>;
   }
 }
 

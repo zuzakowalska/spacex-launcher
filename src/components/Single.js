@@ -5,14 +5,14 @@ class Single extends Component {
     render() {
         return (
             <li className="single">
-            <h5>28 april 2018</h5>
-            <div class="line">
+            <h5>{this.props.launches.launch_date_utc}</h5>
+            <div className="line">
             <div className="arrow"/>
             </div>
             <div className="bullet"></div> 
-            <div class="single__wrapper">
-              <p><span>rocket: </span>falcon9</p>
-              <p><span>launch site: </span>lorem ipsum</p>
+            <div className="single__wrapper">
+              <p><span>rocket: </span>{this.props.launches.rocket.rocket_name}</p> 
+              <p><span>launch site: </span>{this.props.launches.launch_site.site_name}</p>
             </div>
           </li>
         );
