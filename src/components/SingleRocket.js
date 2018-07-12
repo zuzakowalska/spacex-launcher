@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../assets/scss/Single.scss";
+import "../assets/scss/RocketList.scss";
 
-class Single extends Component {
+class SingleRocket extends Component {
     render() {
         return (
             <li className="single">
@@ -19,4 +19,4 @@ class Single extends Component {
     }
 }
 
-export default Single;
+export default SingleRocket;

@@ -5,8 +5,10 @@ body {
 }
 
 .container {
+    width: 90%;
+    margin: 0 auto;
     &__bg {
-        width: 80%;
+        width: 100%;
         background: url("../img/moon.png") top center no-repeat;
         background-size: contain;
         position: absolute;
@@ -19,7 +21,7 @@ body {
 }
 
 .menu {
-    width: 40%;
+    width: 60%;
     margin: 200px auto 0;
     .logo {
         width: 100%;

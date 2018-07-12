@@ -6,21 +6,20 @@ import "../assets/scss/LaunchesList.scss";
 class LaunchesList extends Component {
   createFilters = () => {
     const launches = this.props.launches
-    let rockets = []
+    let allRockets = []
     let filters = []
 
     for (let i = 0; i < launches.length; i++) {
-      rockets.push(launches[i].rocket.rocket_name)
+      allRockets.push(launches[i].rocket.rocket_name)
     }
-    rockets = new Set(rockets)
+    let rockets = new Set(allRockets)
     rockets = Array.from(rockets)
     for (let j = 0; j < rockets.length; j++) {
-      filters.push(<FilterButtons name={ rockets[j] }/>)
+      filters.push(<FilterButtons key={j} name={ rockets[j] } allRockets={allRockets}/>)
     }
     return filters
-    
   }
-
+  
   render() {
     return (
       <div className="launches-list">
