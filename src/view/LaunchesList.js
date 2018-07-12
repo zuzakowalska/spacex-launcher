@@ -4,6 +4,12 @@ import FilterButtons from '../components/FilterButtons.js';
 import "../assets/scss/LaunchesList.scss";
 
 class LaunchesList extends Component {
+  constructor() {
+    super()
+    this.state = {filter: false}
+
+    this.handleFilter = this.handleFilter.bind(this)
+  }
   createFilters = () => {
     const launches = this.props.launches
     let allRockets = []
@@ -15,9 +21,16 @@ class LaunchesList extends Component {
     let rockets = new Set(allRockets)
     rockets = Array.from(rockets)
     for (let j = 0; j < rockets.length; j++) {
-      filters.push(<FilterButtons key={j} name={ rockets[j] } allRockets={allRockets}/>)
+      filters.push(<FilterButtons key={j} name={ rockets[j] } allRockets={allRockets} onClick={this.handleFilter}/>)
     }
+    
     return filters
+  }
+  handleFilter = () => {
+    // this.setState(prevState => ({
+    //   filter: !prevState.filter
+    // }))
+    console.log(this.event.target)
   }
   
   render() {
