@@ -1,13 +1,19 @@
 @import "./vars.scss";
 .launches {
-    margin: 10em auto 0;
+    margin: 10em auto;
+    position: relative;
+    width: 100%;
     &__bg {
         width: 1px;
         height: 100%;
         border-right: 1px dashed #fff;
         position: absolute;
         z-index: -5;
-        left: 51%;
+        left: 50%;
         transform: translateX(-50%);
+    }
+    &__list {
+        overflow: auto;
+        padding: 0 2em;
     }
 }

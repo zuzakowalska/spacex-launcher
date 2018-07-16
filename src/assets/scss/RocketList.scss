@@ -32,7 +32,7 @@
             background-size: cover;
             position: absolute;
             top: -7px;
-            right: -1px;
+            right: -5px;
             transform: rotateY(-180deg);
         }
     }
@@ -42,7 +42,7 @@
         height: 10px;
         border-radius: 50%;
         position: absolute;
-        right: 2px;
+        right: -5px;
         top: 50%;
     }
     &:nth-of-type(2n) {
@@ -57,12 +57,12 @@
             float: right;
             .arrow {
                 right: unset;
-                left: -1px;
+                left: -5px;
                 transform: none;
             }
         }
         .bullet {
-            left: -11px;
+            left: -5px;
         }
         &:nth-child(2) {
             margin-top: 6em;

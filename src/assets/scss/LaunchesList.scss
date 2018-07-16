@@ -5,8 +5,9 @@ body {
 }
 
 .container {
-    width: 90%;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
     &__bg {
         width: 100%;
         background: url("../img/moon.png") top center no-repeat;
