@@ -13,7 +13,11 @@ class RocketList extends Component {
         for (let a in active) {
           if (launches[l].rocket.rocket_name === active[a]) {
             filteredRockets.push(
-              <SingleRocket key={l} launches={launches[l]} />
+              <SingleRocket
+                key={l}
+                launches={launches[l]}
+                onLaunchClick={this.props.onLaunchClick}
+              />
             );
           }
         }

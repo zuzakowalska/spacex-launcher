@@ -4,7 +4,10 @@ import '../assets/scss/RocketList.scss';
 class SingleRocket extends Component {
   render() {
     return (
-      <li className="single" onClick={() => this.props.onLaunchClick()}>
+      <li
+        className="single"
+        onClick={() => this.props.onLaunchClick(this.props.launches)}
+      >
         <h5>{this.props.launches.launch_date_utc}</h5>
         <div className="line">
           <div className="arrow" />

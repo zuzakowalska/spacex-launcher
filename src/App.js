@@ -1,26 +1,30 @@
-import React, { Component } from 'react';
-import launch from './assets/json/launch.json';
+import React from 'react';
 import launchSite from './assets/json/launch_site.json';
-import rocket from './assets/json/rocket.json';
 import LaunchDetails from './view/LaunchDetails';
-import launches from './assets/json/launches.json';
 import LaunchesList from './view/LaunchesList';
 import './App.scss';
 
-class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class App extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
     this.state = {
       viewName: 'list',
+      launches: [],
+      launch: [],
     };
-
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
   }
-
+  componentDidMount() {
+    fetch('https://api.spacexdata.com/v2/launches?launch_year=2017')
+      .then(response => response.json())
+      .then(launches => this.setState({ launches }));
+  }
   get activeViewComponent() {
     const { viewName } = this.state;
-
+    const { launches } = this.state;
+    let { launch } = this.state;
     switch (viewName) {
       case 'list':
         return (
@@ -35,17 +39,20 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           <LaunchDetails
             launch={launch}
             launchSite={launchSite}
-            rocket={rocket}
             onBackClick={this.handleBackClick}
           />
         );
 
-      default: return null;
+      default:
+        return null;
     }
   }
 
-  handleLaunchClick() {
-    this.setState({ viewName: 'details' });
+  handleLaunchClick(launches) {
+    this.setState({
+      viewName: 'details',
+      launch: launches,
+    });
   }
 
   handleBackClick() {
@@ -53,11 +60,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   }
 
   render() {
-    return (
-      <main>
-        {this.activeViewComponent}
-      </main>
-    );
+    return <main>{this.activeViewComponent}</main>;
   }
 }
 

@@ -19,8 +19,8 @@ class LaunchDetails extends Component {
             <div className="logo" />
           </div>
           <Launch
-            rocket={this.props.rocket}
-            launchSite={this.props.launchSite}
+            rocket={this.props.launch.rocket}
+            launchSite={this.props.launch.launch_site}
             launch={this.props.launch}
           />
         </div>
