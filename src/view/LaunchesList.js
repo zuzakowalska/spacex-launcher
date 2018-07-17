@@ -24,7 +24,12 @@ class LaunchesList extends Component {
     let filters = [];
     for (let j = 0; j < rockets.length; j++) {
       filters.push(
-        <FilterButtons key={j} name={rockets[j]} onClick={this.handleFilter} />
+        <FilterButtons
+          key={j}
+          name={rockets[j]}
+          onClick={this.handleFilter}
+          active={this.state}
+        />
       );
     }
     return filters;
@@ -44,7 +49,11 @@ class LaunchesList extends Component {
             <div className="logo" />
             <ul className="menu__list">{this.createFilters()}</ul>
           </div>
-          <Launches launches={this.props.launches} filterState={this.state} />
+          <Launches
+            launches={this.props.launches}
+            filterState={this.state}
+            onLaunchClick={this.props.onLaunchClick}
+          />
         </div>
       </div>
     );

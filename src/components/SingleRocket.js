@@ -1,22 +1,28 @@
-import React, { Component } from "react";
-import "../assets/scss/RocketList.scss";
+import React, { Component } from 'react';
+import '../assets/scss/RocketList.scss';
 
 class SingleRocket extends Component {
-    render() {
-        return (
-            <li className="single">
-            <h5>{this.props.launches.launch_date_utc}</h5>
-            <div className="line">
-            <div className="arrow"/>
-            </div>
-            <div className="bullet"></div> 
-            <div className="single__wrapper">
-              <p><span>rocket: </span>{this.props.launches.rocket.rocket_name}</p> 
-              <p><span>launch site: </span>{this.props.launches.launch_site.site_name}</p>
-            </div>
-          </li>
-        );
-    }
+  render() {
+    return (
+      <li className="single" onClick={() => this.props.onLaunchClick()}>
+        <h5>{this.props.launches.launch_date_utc}</h5>
+        <div className="line">
+          <div className="arrow" />
+        </div>
+        <div className="bullet" />
+        <div className="single__wrapper">
+          <p>
+            <span>rocket: </span>
+            {this.props.launches.rocket.rocket_name}
+          </p>
+          <p>
+            <span>launch site: </span>
+            {this.props.launches.launch_site.site_name}
+          </p>
+        </div>
+      </li>
+    );
+  }
 }
 
 export default SingleRocket;

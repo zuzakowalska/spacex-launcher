@@ -10,6 +10,7 @@ class Launches extends Component {
         <RocketList
           launches={this.props.launches}
           filterState={this.props.filterState}
+          onLaunchClick={this.props.onLaunchClick}
         />
       </div>
     );

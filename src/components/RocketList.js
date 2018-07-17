@@ -20,7 +20,13 @@ class RocketList extends Component {
       }
     } else {
       for (let l in launches) {
-        filteredRockets.push(<SingleRocket key={l} launches={launches[l]} />);
+        filteredRockets.push(
+          <SingleRocket
+            key={l}
+            launches={launches[l]}
+            onLaunchClick={this.props.onLaunchClick}
+          />
+        );
       }
     }
     return filteredRockets;

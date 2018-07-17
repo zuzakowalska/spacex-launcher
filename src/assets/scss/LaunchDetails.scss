@@ -1,11 +1,15 @@
 @import './vars.scss';
+.launch-details {
+    background: #fff;
+}
+
 .header--bg {
     height: 75px;
     width: 100%;
     background: $almost-black;
     position: absolute;
-    z-index: -1;
 }
+
 .launch-details__container {
     width: 80%;
     margin: 0 auto;
@@ -43,7 +47,6 @@
                     margin-left: -2px;
                 }
             }
-            
         }
         .logo {
             height: 100%;
@@ -53,9 +56,9 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
     }
 }
+
 .footer--bg {
     margin-top: 5em;
     width: 100%;
@@ -63,7 +66,6 @@
     background: url('../img/rocket.png') top center no-repeat;
     background-size: cover;
     position: relative;
-    z-index: -1;
     .footer {
         left: 50%;
         transform: translateX(-50%);
@@ -80,4 +82,3 @@
         }
     }
 }
-
