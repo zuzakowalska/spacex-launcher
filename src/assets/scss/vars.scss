@@ -30,6 +30,10 @@ ul:not(.launches__list) {
             background: #fff;
             color: $almost-black;
         }
+        &.active {
+            background: #fff;
+            color: $almost-black;
+        }
     }
 }
 
@@ -38,4 +42,9 @@ ul:not(.launches__list) {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+.active {
+    background: #fff;
+    color: $almost-black;
 }

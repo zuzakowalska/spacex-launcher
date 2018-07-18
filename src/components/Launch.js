@@ -12,6 +12,7 @@ class Launch extends Component {
         </div>
         <div className="launch__container--right">
           <Details
+            launch={this.props.launch}
             rocket={this.props.rocket}
             launchSite={this.props.launchSite}
           />

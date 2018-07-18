@@ -25,14 +25,7 @@ class LaunchDetails extends Component {
           />
         </div>
         <div className="footer--bg">
-          <div className="footer">
-            <h3>Mission Links</h3>
-            <ul>
-              <li>Reddit Campaign</li>
-              <li>Presskit</li>
-              <li>Mission Video</li>
-            </ul>
-          </div>
+          <div className="footer" />
         </div>
       </div>
     );

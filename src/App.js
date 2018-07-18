@@ -17,7 +17,7 @@ class App extends React.Component {
     this.handleBackClick = this.handleBackClick.bind(this);
   }
   componentDidMount() {
-    fetch('https://api.spacexdata.com/v2/launches?launch_year=2017')
+    fetch('https://api.spacexdata.com/v2/launches')
       .then(response => response.json())
       .then(launches => this.setState({ launches }));
   }
