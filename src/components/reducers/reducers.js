@@ -1,4 +1,9 @@
-import { CHANGE_VIEW } from '../constants/action-types';
+export function change(name) {
+  return {
+    type: 'CHANGE',
+    name,
+  };
+}
 
 const initialState = {
   viewName: 'list',
@@ -7,10 +12,6 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case CHANGE_VIEW:
-      state.viewName;
-  }
+  return state;
 };
-
 export default rootReducer;
