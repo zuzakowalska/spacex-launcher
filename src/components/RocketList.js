@@ -3,7 +3,7 @@ import SingleRocket from './SingleRocket.js';
 import '../assets/scss/RocketList.scss';
 
 class RocketList extends Component {
-  getRockets() {
+  getRocketList() {
     const launches = this.props.launches;
     let active = [];
     this.getFilter(active);
@@ -15,7 +15,7 @@ class RocketList extends Component {
             filteredRockets.push(
               <SingleRocket
                 key={l}
-                launches={launches[l]}
+                rocketLaunch={launches[l]}
                 onLaunchClick={this.props.onLaunchClick}
               />
             );
@@ -27,7 +27,7 @@ class RocketList extends Component {
         filteredRockets.push(
           <SingleRocket
             key={l}
-            launches={launches[l]}
+            rocketLaunch={launches[l]}
             onLaunchClick={this.props.onLaunchClick}
           />
         );
@@ -49,7 +49,7 @@ class RocketList extends Component {
   }
 
   render() {
-    return <ul className="launches__list">{this.getRockets()}</ul>;
+    return <ul className="launches__list">{this.getRocketList()}</ul>;
   }
 }
 

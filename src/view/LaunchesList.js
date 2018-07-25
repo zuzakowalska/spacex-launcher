@@ -28,7 +28,7 @@ class LaunchesList extends Component {
           key={j}
           name={rockets[j]}
           onClick={this.handleFilter}
-          active={this.state[rockets[j]]}
+          active={this.props.launches[rockets[j]]}
         />
       );
     }
@@ -39,7 +39,6 @@ class LaunchesList extends Component {
       [name]: !prevState[name],
     }));
   }
-
   render() {
     return (
       <div className="launches-list">

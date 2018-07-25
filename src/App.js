@@ -1,67 +1,70 @@
 import React from 'react';
-import launchSite from './assets/json/launch_site.json';
 import LaunchDetails from './view/LaunchDetails';
 import LaunchesList from './view/LaunchesList';
 import './App.scss';
+import { connect } from 'react-redux';
+import * as actions from './redux/actions';
+import { bindActionCreators } from 'redux';
+
+const mapStateToProps = state => {
+  return {
+    launches: state.launches,
+    launch: state.launch,
+    loading: state.loading,
+    error: state.error,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      changeLaunch: actions.changeLaunch,
+      fetchLaunches: actions.fetchLaunches,
+    },
+    dispatch
+  );
+};
 
 class App extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
-    this.state = {
-      viewName: 'list',
-      launches: [],
-      launch: [],
-    };
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
   }
   componentDidMount() {
-    fetch('https://api.spacexdata.com/v2/launches')
-      .then(response => response.json())
-      .then(launches => this.setState({ launches }));
+    this.props.fetchLaunches();
   }
-  get activeViewComponent() {
-    const { viewName } = this.state;
-    const { launches } = this.state;
-    let { launch } = this.state;
-    switch (viewName) {
-      case 'list':
-        return (
-          <LaunchesList
-            launches={launches}
-            onLaunchClick={this.handleLaunchClick}
-          />
-        );
-
-      case 'details':
-        return (
-          <LaunchDetails
-            launch={launch}
-            launchSite={launchSite}
-            onBackClick={this.handleBackClick}
-          />
-        );
-
-      default:
-        return null;
+  handleLaunchClick(rocketLaunch) {
+    this.props.changeLaunch(rocketLaunch);
+    this.props.history.push('/details');
+  }
+  handleBackClick() {
+    this.props.history.push('/');
+  }
+  getActiveComponent() {
+    if (this.props.location.pathname === '/details') {
+      return (
+        <LaunchDetails
+          onBackClick={this.handleBackClick}
+          launch={this.props.launch}
+        />
+      );
+    } else {
+      return (
+        <LaunchesList
+          onLaunchClick={this.handleLaunchClick}
+          launches={this.props.launches}
+        />
+      );
     }
   }
-
-  handleLaunchClick(launches) {
-    this.setState({
-      viewName: 'details',
-      launch: launches,
-    });
-  }
-
-  handleBackClick() {
-    this.setState({ viewName: 'list' });
-  }
-
   render() {
-    return <main>{this.activeViewComponent}</main>;
+    return <main>{this.getActiveComponent()}</main>;
   }
 }
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

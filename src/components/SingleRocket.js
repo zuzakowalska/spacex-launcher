@@ -6,9 +6,9 @@ class SingleRocket extends Component {
     return (
       <li
         className="single"
-        onClick={() => this.props.onLaunchClick(this.props.launches)}
+        onClick={() => this.props.onLaunchClick(this.props.rocketLaunch)}
       >
-        <h5>{this.props.launches.launch_date_utc}</h5>
+        <h5>{this.props.rocketLaunch.launch_date_utc}</h5>
         <div className="line">
           <div className="arrow" />
         </div>
@@ -16,11 +16,11 @@ class SingleRocket extends Component {
         <div className="single__wrapper">
           <p>
             <span>rocket: </span>
-            {this.props.launches.rocket.rocket_name}
+            {this.props.rocketLaunch.rocket.rocket_name}
           </p>
           <p>
             <span>launch site: </span>
-            {this.props.launches.launch_site.site_name}
+            {this.props.rocketLaunch.launch_site.site_name}
           </p>
         </div>
       </li>

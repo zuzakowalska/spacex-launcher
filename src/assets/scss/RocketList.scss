@@ -8,6 +8,10 @@
     list-style-type: none;
     position: relative;
     cursor: pointer;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
     &:not(:first-child) {
         margin-top: 4em;
     }
