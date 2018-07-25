@@ -4,11 +4,6 @@ import FilterButtons from '../components/FilterButtons.js';
 import '../assets/scss/LaunchesList.scss';
 
 class LaunchesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleFilter = this.handleFilter.bind(this);
-  }
   getRockets() {
     const launches = this.props.launches;
     let allRockets = [];
@@ -27,17 +22,20 @@ class LaunchesList extends Component {
         <FilterButtons
           key={j}
           name={rockets[j]}
-          onClick={this.handleFilter}
-          active={this.props.launches[rockets[j]]}
+          onFilterClick={this.props.onFilterClick}
+          filter={this.props.filter}
         />
       );
     }
+    filters.push(
+      <FilterButtons
+        key={rockets.length}
+        name="All Rockets"
+        onFilterClick={this.props.onFilterClick}
+        filter={this.props.filter}
+      />
+    );
     return filters;
-  }
-  handleFilter(name) {
-    this.setState(prevState => ({
-      [name]: !prevState[name],
-    }));
   }
   render() {
     return (
@@ -46,12 +44,13 @@ class LaunchesList extends Component {
           <div className="container__bg" />
           <div className="menu">
             <div className="logo" />
+            <h3>Click on filters to see a list of SpaceX rockets launches</h3>
             <ul className="menu__list">{this.createFilters()}</ul>
           </div>
           <Launches
             launches={this.props.launches}
-            filterState={this.state}
             onLaunchClick={this.props.onLaunchClick}
+            filter={this.props.filter}
           />
         </div>
       </div>

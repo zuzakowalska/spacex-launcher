@@ -3,6 +3,7 @@ import {
   FETCH_LAUNCHES_SUCCESS,
   FETCH_LAUNCHES_FAILURE,
   CHANGE_LAUNCH,
+  CHANGE_FILTER,
 } from './actions.js';
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
   launch: [],
   loading: false,
   error: null,
-  url: null,
+  filter: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +36,11 @@ const reducer = (state = initialState, action) => {
         loading: false,
         error: action.payload.error,
         launches: [],
+      };
+    case CHANGE_FILTER:
+      return {
+        ...state,
+        filter: action.payload.filter,
       };
     default:
       return state;

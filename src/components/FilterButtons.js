@@ -5,8 +5,8 @@ class FilterButtons extends Component {
   render() {
     return (
       <li
-        className={this.props.active ? 'active' : ''}
-        onClick={() => this.props.onClick(this.props.name)}
+        className={this.props.filter === this.props.name ? 'active' : ''}
+        onClick={() => this.props.onFilterClick(this.props.name)}
       >
         {' '}
         {this.props.name}

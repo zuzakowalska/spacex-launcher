@@ -12,6 +12,7 @@ const mapStateToProps = state => {
     launch: state.launch,
     loading: state.loading,
     error: state.error,
+    filter: state.filter,
   };
 };
 
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => {
     {
       changeLaunch: actions.changeLaunch,
       fetchLaunches: actions.fetchLaunches,
+      changeFilter: actions.changeFilter,
     },
     dispatch
   );
@@ -31,6 +33,7 @@ class App extends React.Component {
     super(props);
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
   componentDidMount() {
     this.props.fetchLaunches();
@@ -41,6 +44,9 @@ class App extends React.Component {
   }
   handleBackClick() {
     this.props.history.push('/');
+  }
+  handleFilter(name) {
+    this.props.changeFilter(name);
   }
   getActiveComponent() {
     if (this.props.location.pathname === '/details') {
@@ -55,6 +61,8 @@ class App extends React.Component {
         <LaunchesList
           onLaunchClick={this.handleLaunchClick}
           launches={this.props.launches}
+          filter={this.props.filter}
+          onFilterClick={this.handleFilter}
         />
       );
     }

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import '../assets/scss/RocketList.scss';
+import * as moment from 'moment';
 
 class SingleRocket extends Component {
   render() {
+    let launchDate = moment
+      .unix(this.props.rocketLaunch.launch_date_unix)
+      .format('MMMM Do YYYY, h:mm:ss a');
     return (
       <li
         className="single"
         onClick={() => this.props.onLaunchClick(this.props.rocketLaunch)}
       >
-        <h5>{this.props.rocketLaunch.launch_date_utc}</h5>
+        <h5>{launchDate}</h5>
         <div className="line">
           <div className="arrow" />
         </div>

@@ -9,7 +9,7 @@ class Launches extends Component {
         <div className="launches__bg" />
         <RocketList
           launches={this.props.launches}
-          filterState={this.props.filterState}
+          filter={this.props.filter}
           onLaunchClick={this.props.onLaunchClick}
         />
       </div>
