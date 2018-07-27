@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
+import './assets/scss/main.scss';
 import { Route, Router } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -17,7 +18,7 @@ render(
       <Route path="/" component={App} />
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.querySelector('.root-component')
 );
 
 // render(<App />, document.getElementById('root'));

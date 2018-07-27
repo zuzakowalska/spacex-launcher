@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SingleRocket from './SingleRocket.js';
-import '../assets/scss/RocketList.scss';
 
 class RocketList extends Component {
   getRocketList() {
@@ -35,7 +34,7 @@ class RocketList extends Component {
   }
 
   render() {
-    return <ul className="launches__list">{this.getRocketList()}</ul>;
+    return <ul>{this.getRocketList()}</ul>;
   }
 }
 

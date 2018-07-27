@@ -1,0 +1,77 @@
+.launch-details {
+    background: #fff;
+    .header {
+        max-height: 75px;
+        width: 100%;
+        background: $almost-black;
+        padding: 10px 0;
+        .container {
+            margin: 0 auto;
+            width: 95%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back {
+            height: 100%;
+            color: $desert;
+            display: flex;
+            letter-spacing: 9px;
+            text-transform: uppercase;
+            font-size: 14px;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            .arrow {
+                height: 100%;
+                margin-right: 2em;
+                display: flex;
+                align-items: center;
+                .bg {
+                    background: url('../img/arrow_pointer.png');
+                    background-position: center center;
+                    background-size: cover;
+                    width: 10px;
+                    height: 10px;
+                }
+                .line {
+                    border-bottom: 3px solid $desert;
+                    width: 2em;
+                    margin-left: -2px;
+                }
+            }
+            h3 {
+                @include hide($tablet-portrait)
+            }
+        }
+        .logo {
+            width: 20%;
+            min-width: 150px;
+        }
+    }
+    .footer {
+        margin-top: 5em;
+        width: 100%;
+        height: 250px;
+        background: url('../img/rocket.png') center center no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    .details-wrapper {
+        display: flex;
+        width: 95%;
+        max-width: 1200px;
+        margin: 50px auto 0;
+        @include respond-to($tablet-portrait) {
+            flex-direction: column;
+        }
+        .launch-header,
+        .launch-info {
+            width: 50%;
+            @include respond-to($tablet-portrait) {
+                width: 100%;
+            }
+        }
+    }
+}

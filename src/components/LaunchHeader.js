@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import '../assets/scss/LaunchDate.scss';
 import * as moment from 'moment';
 
-class LaunchDate extends Component {
+class LaunchHeader extends Component {
   render() {
-    let launchDate = moment
+    const launchDate = moment
       .unix(this.props.launch.launch_date_unix)
       .format('MMMM Do YYYY, h:mm:ss a');
     return (
-      <div className="launch-date">
+      <div className="launch-header">
         <h3>{launchDate}</h3>
         <h1>{this.props.rocket.rocket_name} Launch</h1>
-        <p className="launch-counter">
-          <span id="counter">20 days </span>to start
+        {/* <p className="launch-counter">
+          <span id="counter">{this.counter(launchDate)}</span>ago
         </p>
+        */}
       </div>
     );
   }
 }
 
-export default LaunchDate;
+export default LaunchHeader;

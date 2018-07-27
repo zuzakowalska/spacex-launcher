@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../assets/scss/RocketList.scss';
 import * as moment from 'moment';
 
 class SingleRocket extends Component {
@@ -9,7 +8,7 @@ class SingleRocket extends Component {
       .format('MMMM Do YYYY, h:mm:ss a');
     return (
       <li
-        className="single"
+        className="single-rocket"
         onClick={() => this.props.onLaunchClick(this.props.rocketLaunch)}
       >
         <h5>{launchDate}</h5>
@@ -17,7 +16,7 @@ class SingleRocket extends Component {
           <div className="arrow" />
         </div>
         <div className="bullet" />
-        <div className="single__wrapper">
+        <div className="wrapper">
           <p>
             <span>rocket: </span>
             {this.props.rocketLaunch.rocket.rocket_name}
