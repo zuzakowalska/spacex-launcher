@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import RocketList from './RocketList.js';
-import '../assets/scss/Launches.scss';
 
 class Launches extends Component {
   render() {
     return (
-      <div className="launches">
-        <div className="launches__bg" />
+      <div
+        className={this.props.filter === null ? 'launches-hidden' : 'launches'}
+      >
+        <div className="dashed-line" />
         <RocketList
           launches={this.props.launches}
           filter={this.props.filter}

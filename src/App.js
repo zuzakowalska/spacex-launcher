@@ -1,7 +1,6 @@
 import React from 'react';
 import LaunchDetails from './view/LaunchDetails';
 import LaunchesList from './view/LaunchesList';
-import './App.scss';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { bindActionCreators } from 'redux';
