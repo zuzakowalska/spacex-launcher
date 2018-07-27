@@ -1,5 +1,8 @@
 {
-  "main.js": "static/js/main.d1a12f58.js",
-  "main.js.map": "static/js/main.d1a12f58.js.map",
-  "static/media/main.scss": "static/media/main.04ed65b6.scss"
+  "main.js": "static/js/main.a1c57b2a.js",
+  "main.js.map": "static/js/main.a1c57b2a.js.map",
+  "static/media/arrow_pointer.svg": "static/media/arrow_pointer.0a0fd116.svg",
+  "static/media/moon.png": "static/media/moon.f8c6eb36.png",
+  "static/media/rocket.png": "static/media/rocket.716a55bb.png",
+  "static/media/space_x_logo_bw_centered.png": "static/media/space_x_logo_bw_centered.ef38bfb9.png"
 }
